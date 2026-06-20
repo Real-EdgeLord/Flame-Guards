@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cliihgh6n4ey7"]
 
-[ext_resource type="Script" uid="uid://30yydm0vpc02" path="res://levels/menu/s_root.gd" id="1_fr445"]
-[ext_resource type="Script" uid="uid://c5hpxhivsi0pd" path="res://levels/menu/s_level_parent.gd" id="2_j6adp"]
-[ext_resource type="Script" uid="uid://cqd05k8d0tqvq" path="res://levels/menu/s_ui_parent.gd" id="3_j6adp"]
+[ext_resource type="Script" uid="uid://30yydm0vpc02" path="res://levels/general/s_root.gd" id="1_fr445"]
+[ext_resource type="Script" uid="uid://c5hpxhivsi0pd" path="res://levels/general/s_level_parent.gd" id="2_j6adp"]
+[ext_resource type="Script" uid="uid://cqd05k8d0tqvq" path="res://levels/general/s_ui_parent.gd" id="3_j6adp"]
 [ext_resource type="PackedScene" uid="uid://jqtcuolj84do" path="res://Tests/test_3d.tscn" id="3_st2gy"]
 [ext_resource type="Texture2D" uid="uid://cgw1xm4jsai4k" path="res://assets/2d/icon.svg" id="4_oubi1"]
+[ext_resource type="Script" uid="uid://npjs2hkhvpgv" path="res://scripts/debug/fps_check/s_fps_lable.gd" id="6_774mb"]
 
 [node name="SnRoot" type="Node" unique_id=263513069 node_paths=PackedStringArray("level_parent", "ui_parent")]
 script = ExtResource("1_fr445")
@@ -28,3 +29,12 @@ script = ExtResource("3_j6adp")
 [node name="Icon" type="Sprite2D" parent="UiParent" unique_id=1699299763]
 position = Vector2(913, 559)
 texture = ExtResource("4_oubi1")
+
+[node name="Label" type="Label" parent="UiParent" unique_id=40198534]
+layout_mode = 0
+offset_right = 249.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("6_774mb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=833130238]
