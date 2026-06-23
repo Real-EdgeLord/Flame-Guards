@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dvi1urowpnmdo"
-path="res://.godot/imported/Dark_light.wav-d633130f051f409b0490fd2fe6df8290.sample"
+path="res://.godot/imported/Dark_light.wav-135fa5d4bf05b14d97d773b58384c79c.sample"
 
 [deps]
 
-source_file="res://assets/music/Dark_light.wav"
-dest_files=["res://.godot/imported/Dark_light.wav-d633130f051f409b0490fd2fe6df8290.sample"]
+source_file="res://assets/audio/music/Dark_light.wav"
+dest_files=["res://.godot/imported/Dark_light.wav-135fa5d4bf05b14d97d773b58384c79c.sample"]
 
 [params]
 
