@@ -46,7 +46,10 @@ func set_random_volume(min_volume: float, max_volume: float) -> AdvancedAudioPla
  
 ## Fades [member AudioStreamPlayer3D.volume_db] to [param final_value] with [param duration], ease type of [param ease], and transition type of [param trans].
 func fade(final_value: float = -64.0, duration: float = 1.0, ease_type: Tween.EaseType = Tween.EASE_IN, trans: Tween.TransitionType = Tween.TRANS_LINEAR) -> AdvancedAudioPlayer3D:
-	var tween = create_tween().tween_property(self, 'volume_db', final_value, duration).set_ease(ease_type).set_trans(trans)
+	var tween : Tween = create_tween()
+	var tween_property : PropertyTweener = tween.tween_property(self, 'volume_db', final_value, duration)
+	tween_property = tween_property.set_ease(ease_type)
+	tween_property = tween_property.set_trans(trans)
 	await tween.finished
 	return self
 
