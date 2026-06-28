@@ -1,1 +1,1 @@
-extends Control
+class_name UIParent extends Control
