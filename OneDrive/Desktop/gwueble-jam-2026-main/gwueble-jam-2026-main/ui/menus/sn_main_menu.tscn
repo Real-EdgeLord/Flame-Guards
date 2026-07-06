@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://d0yqan043d787"]
+
+[ext_resource type="Script" uid="uid://c6o2oaxobxf2p" path="res://ui/menus/s_main_menu.gd" id="1_75geh"]
+[ext_resource type="PackedScene" uid="uid://cgcx532nhhtg8" path="res://ui/screens/loading_screen/sn_loading_screen.tscn" id="2_x53yq"]
+
+[sub_resource type="Gradient" id="Gradient_4klm4"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0.00012932514, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gwtsm"]
+gradient = SubResource("Gradient_4klm4")
+
+[node name="SnMainMenu" type="Control" unique_id=1179359476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_75geh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=115164434]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 744.0
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_gwtsm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1019811443]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 162.0
+offset_top = 353.0
+offset_right = 653.0
+offset_bottom = -353.0
+grow_vertical = 2
+
+[node name="BTStartGame" type="Button" parent="VBoxContainer" unique_id=689919832]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 44
+text = "Start Game"
+
+[node name="BTSettings" type="Button" parent="VBoxContainer" unique_id=1685606473]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 44
+text = "Settings"
+
+[node name="BTAbout" type="Button" parent="VBoxContainer" unique_id=315636444]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 44
+text = "About"
+
+[node name="BTQuit" type="Button" parent="VBoxContainer" unique_id=1754790853]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 44
+text = "Quit"
+
+[node name="SnLoadingScreen" parent="." unique_id=1024458960 instance=ExtResource("2_x53yq")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/BTStartGame" to="." method="_on_bt_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/BTSettings" to="." method="_on_bt_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/BTAbout" to="." method="_on_bt_about_pressed"]
+[connection signal="pressed" from="VBoxContainer/BTQuit" to="." method="_on_bt_quit_pressed"]
