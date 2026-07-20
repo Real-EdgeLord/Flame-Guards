@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://30yydm0vpc02" path="res://levels/general/s_root.gd" id="1_fr445"]
 [ext_resource type="Script" uid="uid://c5hpxhivsi0pd" path="res://levels/general/s_level_parent.gd" id="2_j6adp"]
+[ext_resource type="PackedScene" uid="uid://b8jo106lk6luu" path="res://levels/game_play/sn_shop.tscn" id="3_774mb"]
 [ext_resource type="Script" uid="uid://cqd05k8d0tqvq" path="res://levels/general/s_ui_parent.gd" id="3_j6adp"]
-[ext_resource type="PackedScene" uid="uid://jqtcuolj84do" path="res://Tests/sn_test_3d.tscn" id="3_st2gy"]
+[ext_resource type="PackedScene" uid="uid://m7rn1g4g3kfa" path="res://characters/player/sn_player.tscn" id="4_iimaj"]
 [ext_resource type="Texture2D" uid="uid://cgw1xm4jsai4k" path="res://assets/2d/icon.svg" id="4_oubi1"]
 [ext_resource type="Script" uid="uid://npjs2hkhvpgv" path="res://scripts/debug/fps_check/s_fps_lable.gd" id="6_774mb"]
 
@@ -12,10 +13,12 @@ script = ExtResource("1_fr445")
 level_parent = NodePath("LevelParent")
 ui_parent = NodePath("UiParent")
 
-[node name="LevelParent" type="Node3D" parent="." unique_id=1582236918]
+[node name="LevelParent" type="Node2D" parent="." unique_id=157669773]
 script = ExtResource("2_j6adp")
 
-[node name="Test3D" parent="LevelParent" unique_id=1574850195 instance=ExtResource("3_st2gy")]
+[node name="SnShop" parent="LevelParent" unique_id=1422483763 instance=ExtResource("3_774mb")]
+
+[node name="Player" parent="LevelParent" unique_id=1054489060 instance=ExtResource("4_iimaj")]
 
 [node name="UiParent" type="Control" parent="." unique_id=278554820]
 layout_mode = 3
@@ -27,7 +30,8 @@ grow_vertical = 2
 script = ExtResource("3_j6adp")
 
 [node name="Icon" type="Sprite2D" parent="UiParent" unique_id=1699299763]
-position = Vector2(913, 559)
+position = Vector2(170, 175)
+scale = Vector2(0.40625, 0.375)
 texture = ExtResource("4_oubi1")
 
 [node name="Label" type="Label" parent="UiParent" unique_id=40198534]

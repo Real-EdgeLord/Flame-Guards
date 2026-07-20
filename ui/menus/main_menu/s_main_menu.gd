@@ -8,7 +8,7 @@ func _ready() -> void:
 	init_completed.emit()
 
 func _on_bt_start_game_pressed() -> void:
-	var loaded_sceen : PackedScene = await SceneManager.change_scene("res://levels/game_play/sn_level_1.tscn")
+	var loaded_sceen : PackedScene = await SceneManager.change_scene("uid://b8jo106lk6luu")
 	var new_scene: Node = loaded_sceen.instantiate()
 	GameManager.level_parent.add_child(new_scene)
 	queue_free()

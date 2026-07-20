@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://b8jo106lk6luu"]
 
+[ext_resource type="Texture2D" uid="uid://dpmy372dcae3v" path="res://assets/2d/Tile Map.png" id="1_k1q68"]
+
 [node name="SnShop" type="Node2D" unique_id=1422483763]
+
+[node name="TileMap" type="Sprite2D" parent="." unique_id=110277040]
+position = Vector2(330, 181)
+texture = ExtResource("1_k1q68")

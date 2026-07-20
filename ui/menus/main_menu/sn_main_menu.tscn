@@ -22,44 +22,49 @@ script = ExtResource("1_dnppr")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=115164434]
 layout_mode = 1
-anchors_preset = 9
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 744.0
+grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_gwtsm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1019811443]
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = 162.0
-offset_top = 353.0
-offset_right = 653.0
-offset_bottom = -353.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = -84.0
+offset_right = 124.5
+offset_bottom = 84.0
+grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BTStartGame" type="Button" parent="VBoxContainer" unique_id=689919832]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 44
+theme_override_font_sizes/font_size = 22
 text = "Start Game"
 
 [node name="BTSettings" type="Button" parent="VBoxContainer" unique_id=1685606473]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 44
+theme_override_font_sizes/font_size = 22
 text = "Settings"
 
 [node name="BTAbout" type="Button" parent="VBoxContainer" unique_id=315636444]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 44
+theme_override_font_sizes/font_size = 22
 text = "About"
 
 [node name="BTQuit" type="Button" parent="VBoxContainer" unique_id=1754790853]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 44
+theme_override_font_sizes/font_size = 22
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/BTStartGame" to="." method="_on_bt_start_game_pressed"]
