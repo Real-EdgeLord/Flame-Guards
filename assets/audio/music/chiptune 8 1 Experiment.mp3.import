@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhejlyomvr17b"
+path="res://.godot/imported/chiptune 8 1 Experiment.mp3-108b9762a74813a43037a3608e14d65d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/chiptune 8 1 Experiment.mp3"
+dest_files=["res://.godot/imported/chiptune 8 1 Experiment.mp3-108b9762a74813a43037a3608e14d65d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
