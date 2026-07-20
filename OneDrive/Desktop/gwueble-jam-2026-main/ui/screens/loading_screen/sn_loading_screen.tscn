@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cgcx532nhhtg8"]
+
+[ext_resource type="Script" uid="uid://c7hcx718rlrwm" path="res://ui/screens/loading_screen/s_loading_screen.gd" id="1_54iyc"]
+[ext_resource type="Texture2D" uid="uid://cgw1xm4jsai4k" path="res://assets/2d/icon.svg" id="2_o2x5l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7pkv"]
+bg_color = Color(0.09620472, 0.09620475, 0.09620469, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_8kee8"]
+subpixel_positioning = 0
+
+[node name="SnLoadingScreen" type="Control" unique_id=1024458960 node_paths=PackedStringArray("spinner")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54iyc")
+spinner = NodePath("TextureRect")
+
+[node name="Panel" type="Panel" parent="." unique_id=2074921815]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h7pkv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1342224071]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = -80.0
+grow_vertical = 0
+texture = ExtResource("2_o2x5l")
+
+[node name="Label" type="Label" parent="." unique_id=284613481]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 264.0
+offset_top = -138.0
+offset_right = 553.0
+offset_bottom = -64.0
+grow_vertical = 0
+theme_override_fonts/font = SubResource("SystemFont_8kee8")
+theme_override_font_sizes/font_size = 54
+text = "LOADING..."
+horizontal_alignment = 1
+vertical_alignment = 1
