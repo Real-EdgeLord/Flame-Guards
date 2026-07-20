@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvrk3s7x54lv2"]
+
+[ext_resource type="Script" uid="uid://62hg4pusu0k8" path="res://actors/machines/s_machine.gd" id="1_rcrcr"]
+
+[node name="SnMachine" type="Node2D" unique_id=1937112935]
+script = ExtResource("1_rcrcr")

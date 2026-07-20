@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://df4cjcntrrtjj"]
+
+[ext_resource type="Script" uid="uid://v5xpkuvj0qos" path="res://actors/chair/s_chair.gd" id="1_otqso"]
+
+[node name="SnChair" type="Node2D" unique_id=1243563484]
+script = ExtResource("1_otqso")

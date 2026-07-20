@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b8e2wi677qccj"]
+
+[ext_resource type="Script" uid="uid://bmyfsxfv8k8j3" path="res://actors/cart/s_cart.gd" id="1_ff831"]
+
+[node name="SnCart" type="Node2D" unique_id=2040187726]
+script = ExtResource("1_ff831")
