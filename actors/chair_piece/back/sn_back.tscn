@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ba4a46dp0eoh8"]
+
+[ext_resource type="Script" uid="uid://owxxp3861thq" path="res://actors/chair_piece/back/s_chair_back.gd" id="1_dle3v"]
+
+[node name="SnBack" type="Node2D" unique_id=1403408727]
+script = ExtResource("1_dle3v")

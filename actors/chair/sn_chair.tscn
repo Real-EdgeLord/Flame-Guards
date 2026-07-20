@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://df4cjcntrrtjj"]
 
 [ext_resource type="Script" uid="uid://v5xpkuvj0qos" path="res://actors/chair/s_chair.gd" id="1_otqso"]
+[ext_resource type="Texture2D" uid="uid://dolfhv7k8atr2" path="res://assets/2d/chair_back.png" id="2_3flwl"]
+[ext_resource type="Texture2D" uid="uid://1dkl0cr4u50k" path="res://assets/2d/chair_seat.png" id="3_6ol2h"]
+[ext_resource type="Texture2D" uid="uid://c3te27lxo84en" path="res://assets/2d/chair_legs.png" id="4_8nxyc"]
 
-[node name="SnChair" type="Node2D" unique_id=1243563484]
+[node name="SnChair" type="Node2D" unique_id=1243563484 node_paths=PackedStringArray("back", "seat", "legs")]
+texture_filter = 1
 script = ExtResource("1_otqso")
+back = NodePath("back")
+seat = NodePath("seat")
+legs = NodePath("legs")
+
+[node name="back" type="Sprite2D" parent="." unique_id=2109202343]
+texture = ExtResource("2_3flwl")
+
+[node name="seat" type="Sprite2D" parent="." unique_id=242465259]
+texture = ExtResource("3_6ol2h")
+
+[node name="legs" type="Sprite2D" parent="." unique_id=1697973044]
+texture = ExtResource("4_8nxyc")

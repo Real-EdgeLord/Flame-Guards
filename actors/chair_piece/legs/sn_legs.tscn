@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cxxa6c3qttfad"]
+
+[ext_resource type="Script" uid="uid://dc43n2x0exjoq" path="res://actors/chair_piece/legs/s_chair_legs.gd" id="1_w3wpp"]
+
+[node name="SnLegs" type="Node2D" unique_id=267715248]
+script = ExtResource("1_w3wpp")

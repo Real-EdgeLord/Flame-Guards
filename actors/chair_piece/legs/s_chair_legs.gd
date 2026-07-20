@@ -1,0 +1,2 @@
+extends ChairPiece
+class_name ChairLegs
