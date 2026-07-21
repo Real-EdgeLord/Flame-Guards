@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bdcclivh0dvqr"]
-
-[ext_resource type="Script" uid="uid://b234yucxv7uqy" path="res://actors/customer/s_customer.gd" id="1_47lxd"]
-
-[node name="SnCustomer" type="Node2D" unique_id=1209273790]
-script = ExtResource("1_47lxd")
