@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://m7rn1g4g3kfa"]
 
 [ext_resource type="Script" uid="uid://dq1j035551al4" path="res://characters/player/s_player_controller.gd" id="1_gaqhi"]
+[ext_resource type="Script" uid="uid://dcaruvomgd60q" path="res://characters/player/s_player.gd" id="1_syaqv"]
 [ext_resource type="Texture2D" uid="uid://de8jl2t26bhnm" path="res://characters/player/sprite_sheet/Player_Placeholder.png" id="2_syaqv"]
 
 [sub_resource type="Animation" id="Animation_rbwfb"]
@@ -239,13 +240,14 @@ graph_offset = Vector2(40, 10)
 radius = 3.0
 height = 10.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1054489060 node_paths=PackedStringArray("sprite", "animation_tree")]
-script = ExtResource("1_gaqhi")
-move_speed = 75.0
+[node name="Player" type="CharacterBody2D" unique_id=1054489060 node_paths=PackedStringArray("sprite", "animation_tree", "player_controller")]
+script = ExtResource("1_syaqv")
 sprite = NodePath("Sprite2D")
 animation_tree = NodePath("AnimationTree")
+player_controller = NodePath("PlayerController")
 
 [node name="PlayerController" type="Node" parent="." unique_id=1485325944]
+script = ExtResource("1_gaqhi")
 
 [node name="Hud" type="Control" parent="." unique_id=1701124322]
 layout_mode = 3

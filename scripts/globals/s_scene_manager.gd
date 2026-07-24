@@ -23,30 +23,28 @@ func _ready() -> void:
 	_loading_screen.visible = false
 	_layer.add_child(_loading_screen)
 
+func show_loading_screen() -> void: 
+	_loading_screen.visible = true
+
+
 
 func change_scene(path: String) -> PackedScene:
 	if _loading:
 		return null
 	_loading = true
 	_scene_path = path
-
-	_loading_screen.visible = true
-
-
-	#var current: Node = get_tree().current_scene
-	#if current:
-		#current.queue_free()
-		#await current.tree_exited
-
 	var err: Error = ResourceLoader.load_threaded_request(_scene_path, "PackedScene")
 	if err != OK:
 		push_error("Failed to start loading: %s" % _scene_path)
 		_finish(null)
 		return null
-
 	set_process(true)
+	
+
 	await scene_load_finished
-	return _loaded_scene
+	var loaded_scene : PackedScene = _loaded_scene
+	_loaded_scene = null
+	return loaded_scene
 
 
 func _process(_delta: float) -> void:
@@ -68,7 +66,11 @@ func _process(_delta: float) -> void:
 func _finish(packed: PackedScene) -> void:
 	if packed:
 		_loaded_scene = packed
-	_loading_screen.visible = false
 	_loading = false
-	scene_load_finished.emit()
 	set_process(false)
+	scene_load_finished.emit()
+	
+
+
+func hide_loading_screen() -> void:
+	_loading_screen.visible = false
