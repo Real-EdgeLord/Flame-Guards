@@ -237,8 +237,8 @@ states/Walk/position = Vector2(532.0909, 187.36363)
 graph_offset = Vector2(40, 10)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h7pkv"]
-radius = 3.0
-height = 10.0
+radius = 14.0
+height = 50.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1054489060 node_paths=PackedStringArray("sprite", "animation_tree", "player_controller")]
 script = ExtResource("1_syaqv")
@@ -260,6 +260,8 @@ offset_bottom = 40.0
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=48211471]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=437164927]
+position = Vector2(0, 18)
+scale = Vector2(4, 4)
 texture = ExtResource("2_syaqv")
 centered = false
 offset = Vector2(-12, -18)
@@ -276,6 +278,6 @@ parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1479515349]
-position = Vector2(0, 3)
+position = Vector2(0, 28)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_h7pkv")

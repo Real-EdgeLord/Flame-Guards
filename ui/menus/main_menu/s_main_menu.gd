@@ -20,6 +20,9 @@ func _on_bt_start_game_pressed() -> void:
 	var player_scene : PackedScene = await SceneManager.change_scene("uid://m7rn1g4g3kfa")
 	var player: Player = player_scene.instantiate()
 	GameManager.level_parent.add_child(player)
+	#TODO : THIS SHOULD NOT BE HERE I GUESS 
+	var screen_center: Vector2 = DisplayServer.window_get_size() / 2.0
+	player.position = screen_center
 	SceneManager.hide_loading_screen()
 	GameManager.change_state(GameManager.GameState.PLAYING)
 	queue_free()

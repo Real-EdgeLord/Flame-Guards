@@ -7,7 +7,7 @@ class_name PlayerController
 @export var action_right: StringName = &"move_right"
 @export var action_up: StringName = &"move_up"
 @export var action_down: StringName = &"move_down"
-@export var action_menu: StringName = &"menu"
+@export var action_menu: StringName = &"meun"
 
 var input_active : bool 
 
@@ -23,4 +23,8 @@ func _unhandled_input(_event: InputEvent) -> void:
 		move_dir = Vector2.ZERO
 		return
 	move_dir = Input.get_vector(action_left, action_right, action_up, action_down)
-	
+	if _event.is_action(action_menu):
+		#TODO :
+		#GameManager.toggle_pause()
+		#show pause menu which does not exsist yet
+		pass
