@@ -4,8 +4,9 @@ class_name MainMenu extends Control
 signal init_completed
 
 
-var about_menu : PackedScene = preload("uid://b4ffuf0ldkc57")
-var settings_menu : PackedScene = preload("uid://nqhx57o27mpx")
+
+
+
 
 func _ready() -> void:
 	init_completed.emit()
@@ -20,9 +21,7 @@ func _on_bt_start_game_pressed() -> void:
 	var player_scene : PackedScene = await SceneManager.change_scene("uid://m7rn1g4g3kfa")
 	var player: Player = player_scene.instantiate()
 	GameManager.level_parent.add_child(player)
-	#TODO : THIS SHOULD NOT BE HERE I GUESS 
-	var screen_center: Vector2 = DisplayServer.window_get_size() / 2.0
-	player.position = screen_center
+	GameManager.player = player
 	SceneManager.hide_loading_screen()
 	GameManager.change_state(GameManager.GameState.PLAYING)
 	queue_free()
@@ -31,17 +30,19 @@ func _on_bt_start_game_pressed() -> void:
 
 
 func _on_bt_settings_pressed() -> void:
-	var settings_menu_scene: SettingsMenu = settings_menu.instantiate()
-	GameManager.ui_parent.add_child(settings_menu_scene)
+	var settings_menu_scene : PackedScene = load("uid://nqhx57o27mpx")
+	var settings_menu: SettingsMenu = settings_menu_scene.instantiate()
+	GameManager.ui_parent.add_child(settings_menu)
 	queue_free()
-	
+
 
 
 
 
 func _on_bt_about_pressed() -> void:
-	var about_menu_scene: AboutMenu = about_menu.instantiate()
-	GameManager.ui_parent.add_child(about_menu_scene)
+	var about_menu_scene : PackedScene = load("uid://b4ffuf0ldkc57")
+	var about_menu: AboutMenu = about_menu_scene.instantiate()
+	GameManager.ui_parent.add_child(about_menu)
 	queue_free()
 
 

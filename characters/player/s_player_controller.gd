@@ -25,6 +25,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 	move_dir = Input.get_vector(action_left, action_right, action_up, action_down)
 	if _event.is_action(action_menu):
 		#TODO :
-		#GameManager.toggle_pause()
+		GameManager.toggle_pause()
 		#show pause menu which does not exsist yet
 		pass
