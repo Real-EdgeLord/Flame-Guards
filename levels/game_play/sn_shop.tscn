@@ -5,5 +5,6 @@
 [node name="SnShop" type="Node2D" unique_id=1422483763]
 
 [node name="TileMap" type="Sprite2D" parent="." unique_id=110277040]
-position = Vector2(330, 181)
+position = Vector2(281, 172)
+scale = Vector2(1.7343749, 1.7343749)
 texture = ExtResource("1_k1q68")

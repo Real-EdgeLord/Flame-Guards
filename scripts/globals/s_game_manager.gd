@@ -3,7 +3,8 @@ extends Node
 
 signal game_state_changed(old_state: GameState, new_state: GameState )
 
-
+var pause_screen_scene : PackedScene = preload("uid://bl6gpuwjdi6ib")
+var pause_screen : PauseScreen
 
 enum GameState {
 	STARTING,
@@ -85,6 +86,8 @@ func _game_menu() -> void:
 func _game_paused() -> void:
 	if player_controller != null :
 		player_controller.input_active = false
+	pause_screen = pause_screen_scene.instantiate()
+	ui_parent.add_child(pause_screen)
 
 
 
@@ -92,6 +95,9 @@ func _game_paused() -> void:
 func _game_playing() -> void:
 	if player_controller != null :
 		player_controller.input_active = true
+	var screen_center: Vector2 = get_viewport().get_visible_rect().size / 2.0
+	print(screen_center)
+	player.position = screen_center
 
 
 
@@ -103,6 +109,7 @@ func _game_quiting()-> void:
 	get_tree().quit(0)
 
 
+
 func toggle_pause() -> void:
 	if current_state == GameState.PLAYING:
 		Engine.time_scale = 0
@@ -110,3 +117,5 @@ func toggle_pause() -> void:
 	elif current_state == GameState.PASED:
 		change_state(GameState.PLAYING)
 		Engine.time_scale = 1
+		if pause_screen != null :
+			pause_screen.queue_free()
