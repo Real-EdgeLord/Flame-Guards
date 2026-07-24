@@ -4,6 +4,7 @@ extends Node
 signal game_state_changed(old_state: GameState, new_state: GameState )
 
 
+
 enum GameState {
 	STARTING,
 	MENU,
@@ -18,6 +19,10 @@ var ui_parent: UIParent
 var level_parent: LevelParent
 var current_state: GameState
 var previous_state: GameState
+
+var character_input : bool = false
+var player : Player
+var player_controller : PlayerController
 
 
 func _ready() -> void:
@@ -61,22 +66,33 @@ func _game_starting() -> void:
 	var main_menu: MainMenu = main_manu_scene.instantiate()
 	ui_parent.add_child(main_menu)
 	await main_menu.init_completed
+	GameManager.change_state(GameManager.GameState.MENU)
 
 
 func _game_loading() -> void:
+	if player_controller != null :
+		player_controller.input_active = false
 	pass
 
 
 func _game_menu() -> void:
+	if player_controller != null :
+		player_controller.input_active = false
+
 	pass
 
 
 func _game_paused() -> void:
-	pass
+	if player_controller != null :
+		player_controller.input_active = false
+
+
 
 
 func _game_playing() -> void:
-	pass
+	if player_controller != null :
+		player_controller.input_active = true
+
 
 
 func _game_quiting()-> void:
@@ -89,6 +105,8 @@ func _game_quiting()-> void:
 
 func toggle_pause() -> void:
 	if current_state == GameState.PLAYING:
+		Engine.time_scale = 0
 		change_state(GameState.PASED)
 	elif current_state == GameState.PASED:
 		change_state(GameState.PLAYING)
+		Engine.time_scale = 1

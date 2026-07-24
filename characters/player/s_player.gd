@@ -24,6 +24,7 @@ var _last_direction: Vector2 = Vector2.DOWN
 
 
 func _ready() -> void:
+	GameManager.player = self
 	if animation_tree == null:
 		return
 	animation_tree.active = true
