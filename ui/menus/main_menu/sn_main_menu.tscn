@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0yqan043d787"]
 
 [ext_resource type="Script" uid="uid://c6o2oaxobxf2p" path="res://ui/menus/main_menu/s_main_menu.gd" id="1_dnppr"]
+[ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="2_dbf3s"]
 
 [node name="SnMainMenu" type="Control" unique_id=1179359476]
 layout_mode = 3
@@ -28,6 +29,7 @@ grow_vertical = 2
 [node name="BTStartGame" type="Button" parent="VBoxContainer" unique_id=689919832]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_dbf3s")
 theme_override_font_sizes/font_size = 22
 text = "Start Game"
 
