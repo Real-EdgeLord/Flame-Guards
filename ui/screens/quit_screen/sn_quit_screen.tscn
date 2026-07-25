@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbd1sr2vvylq7"]
 
 [ext_resource type="Script" uid="uid://7nkhwwx5we7c" path="res://ui/screens/quit_screen/s_quit_screen.gd" id="1_75sme"]
+[ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="2_htaui"]
 
 [node name="SnQuitScreen" type="Control" unique_id=1741829064]
 layout_mode = 3
@@ -27,8 +28,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 42
-text = "This is Quit Screen ... it is really nice to add and it is really simple"
+theme = ExtResource("2_htaui")
+theme_override_font_sizes/font_size = 22
+text = "Have A Great DAY :)"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3

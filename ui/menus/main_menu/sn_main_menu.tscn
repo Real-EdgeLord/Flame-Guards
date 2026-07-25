@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_dbf3s")
 script = ExtResource("1_dnppr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1019811443]
@@ -25,6 +26,7 @@ offset_right = 124.5
 offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_dbf3s")
 
 [node name="BTStartGame" type="Button" parent="VBoxContainer" unique_id=689919832]
 layout_mode = 2
@@ -36,18 +38,21 @@ text = "Start Game"
 [node name="BTSettings" type="Button" parent="VBoxContainer" unique_id=1685606473]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_dbf3s")
 theme_override_font_sizes/font_size = 22
 text = "Settings"
 
 [node name="BTAbout" type="Button" parent="VBoxContainer" unique_id=315636444]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_dbf3s")
 theme_override_font_sizes/font_size = 22
 text = "About"
 
 [node name="BTQuit" type="Button" parent="VBoxContainer" unique_id=1754790853]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_dbf3s")
 theme_override_font_sizes/font_size = 22
 text = "Quit"
 

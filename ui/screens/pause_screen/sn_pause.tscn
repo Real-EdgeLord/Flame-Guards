@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_bn7cf")
 script = ExtResource("1_v8rfo")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=415348039]
@@ -25,6 +26,7 @@ offset_right = 124.5
 offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_bn7cf")
 
 [node name="BTPlay" type="Button" parent="VBoxContainer" unique_id=696089903]
 layout_mode = 2
@@ -36,18 +38,21 @@ text = "Play"
 [node name="BTSettings" type="Button" parent="VBoxContainer" unique_id=1199209231]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_bn7cf")
 theme_override_font_sizes/font_size = 22
 text = "Settings"
 
 [node name="BTMainMenu" type="Button" parent="VBoxContainer" unique_id=1862334805]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_bn7cf")
 theme_override_font_sizes/font_size = 22
 text = "Main Menu"
 
 [node name="BTQuit" type="Button" parent="VBoxContainer" unique_id=1553159762]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_bn7cf")
 theme_override_font_sizes/font_size = 22
 text = "Quit Game"
 

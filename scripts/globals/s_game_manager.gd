@@ -96,8 +96,8 @@ func _game_playing() -> void:
 	if player_controller != null :
 		player_controller.input_active = true
 	var screen_center: Vector2 = get_viewport().get_visible_rect().size / 2.0
-	print(screen_center)
-	player.position = screen_center
+	player.init_location = screen_center
+	player.start_game()
 
 
 
