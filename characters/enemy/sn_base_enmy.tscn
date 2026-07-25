@@ -5,15 +5,15 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwtsm"]
 
-[node name="SnBaseEnmy" type="CharacterBody2D" unique_id=1718618520 node_paths=PackedStringArray("collision_shape_2d", "navigation_agent_2d")]
+[node name="SnBaseEnmy" type="CharacterBody2D" unique_id=1718618520 node_paths=PackedStringArray("navigation_agent")]
 script = ExtResource("1_i1enu")
-collision_shape_2d = NodePath("CollisionShape2D")
-navigation_agent_2d = NodePath("NavigationAgent2D")
+navigation_agent = NodePath("NavigationAgent2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=183003972]
 shape = SubResource("CapsuleShape2D_gwtsm")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1500447196]
+avoidance_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1805896393]
 texture = ExtResource("2_0u5my")
