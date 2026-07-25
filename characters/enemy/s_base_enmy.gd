@@ -1,31 +1,28 @@
 extends CharacterBody2D
-class_name Base_enemy
+class_name BaseEnemy
 
-var hleath : int 
-var speed : int 
+@export var movement_speed: float = 50
+@export var navigation_agent: NavigationAgent2D 
+var movement_delta: float
 
-var target : Vector2
+func _ready() -> void:
+	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+	set_movement_target(Vector2(0,1))
 
-@export var collision_shape_2d: CollisionShape2D
-@export var navigation_agent_2d: NavigationAgent2D
+func set_movement_target(movement_target: Vector2):
+	movement_target = Vector2(400,200)
+	navigation_agent.set_target_position(movement_target)
 
-func ready() -> void :
-	target = Vector2(320,120)
-	update_target_location(target)
+func _physics_process(delta):
+	# Do not query when the map has never synchronized and is empty.
+	if navigation_agent.is_navigation_finished():
+		return
 
+	var current_agent_position: Vector2 = global_position
+	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
-func _physics_process(delta: float) -> void:
-	look_at(target)
-	if position.distance_to(target) > 0.5:
-		var curloc = global_transform.origin
-		var nextloc = navigation_agent_2d.get_next_path_position()
-		var new_speed = (nextloc - curloc ).normalized *speed 
-		velocity = new_speed
-		move_and_slide()
-	pass
+	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+	move_and_slide()
 
-
-func update_target_location(_target : Vector2) -> void :
-	navigation_agent_2d.set_target_position(_target)
-	
-	
+func _on_velocity_computed(safe_velocity: Vector2) -> void:
+	global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)
