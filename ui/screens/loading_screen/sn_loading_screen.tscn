@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://cgcx532nhhtg8"]
 
 [ext_resource type="Script" uid="uid://c7hcx718rlrwm" path="res://ui/screens/loading_screen/s_loading_screen.gd" id="1_54iyc"]
-[ext_resource type="Texture2D" uid="uid://cgw1xm4jsai4k" path="res://assets/2d/icon.svg" id="2_o2x5l"]
+[ext_resource type="Texture2D" uid="uid://bxcoambkabcnl" path="res://assets/2d/Thrownx32.png" id="2_e8b5f"]
+[ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="3_e8b5f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7pkv"]
 bg_color = Color(0.09620472, 0.09620475, 0.09620469, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_8kee8"]
-subpixel_positioning = 0
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gwtsm"]
+thickness = 0
 
 [node name="SnLoadingScreen" type="Control" unique_id=1024458960 node_paths=PackedStringArray("spinner")]
 layout_mode = 3
@@ -28,30 +29,47 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h7pkv")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1342224071]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2001225026]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = -120.0
-offset_right = 120.0
-offset_bottom = -80.0
-grow_vertical = 0
-texture = ExtResource("2_o2x5l")
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -19.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="." unique_id=284613481]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 264.0
-offset_top = -138.0
-offset_right = 553.0
-offset_bottom = -64.0
-grow_vertical = 0
-theme_override_fonts/font = SubResource("SystemFont_8kee8")
-theme_override_font_sizes/font_size = 54
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer" unique_id=1810837459]
+custom_maximum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+alignment = 1
+vertical = true
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1498153726]
+layout_mode = 2
+theme_override_constants/separation = 30
+theme_override_styles/separator = SubResource("StyleBoxLine_gwtsm")
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=284613481]
+layout_mode = 2
+theme = ExtResource("3_e8b5f")
+theme_override_font_sizes/font_size = 38
 text = "LOADING..."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1342224071]
+texture_filter = 1
+layout_mode = 0
+offset_left = 36.0
+offset_top = 101.0
+offset_right = 186.0
+offset_bottom = 251.0
+grow_vertical = 0
+offset_transform_enabled = true
+texture = ExtResource("2_e8b5f")
+expand_mode = 5

@@ -38,7 +38,7 @@ gdscript/warnings/return_value_discarded=1
 [display]
 
 window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_height=352
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cqffxtmh4t4o3"]
+
+[ext_resource type="Script" uid="uid://cid0xqw1tkns2" path="res://characters/enemy/s_base_enmy.gd" id="1_i1enu"]
+[ext_resource type="Texture2D" uid="uid://c5m6xvodhpb2y" path="res://characters/player/sprite_sheet/Down Walk/Player Down Walk Animation3.png" id="2_0u5my"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwtsm"]
+
+[node name="SnBaseEnmy" type="CharacterBody2D" unique_id=1718618520 node_paths=PackedStringArray("collision_shape_2d", "navigation_agent_2d")]
+script = ExtResource("1_i1enu")
+collision_shape_2d = NodePath("CollisionShape2D")
+navigation_agent_2d = NodePath("NavigationAgent2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=183003972]
+shape = SubResource("CapsuleShape2D_gwtsm")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1500447196]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1805896393]
+texture = ExtResource("2_0u5my")

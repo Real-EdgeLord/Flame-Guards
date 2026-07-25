@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://30yydm0vpc02" path="res://levels/general/s_root.gd" id="1_fr445"]
 [ext_resource type="Script" uid="uid://c5hpxhivsi0pd" path="res://levels/general/s_level_parent.gd" id="2_j6adp"]
 [ext_resource type="Script" uid="uid://cqd05k8d0tqvq" path="res://levels/general/s_ui_parent.gd" id="3_j6adp"]
-[ext_resource type="AudioStream" uid="uid://dh2oj0d22kwc0" path="res://assets/audio/music/Calm1 Experiment.mp3" id="5_y5wjj"]
+[ext_resource type="AudioStream" uid="uid://c7ejw6wqxtwnf" path="res://assets/audio/music/sf2 demo.mp3" id="4_hu5kt"]
 
 [node name="SnRoot" type="Node" unique_id=263513069 node_paths=PackedStringArray("level_parent", "ui_parent")]
 script = ExtResource("1_fr445")
@@ -23,7 +23,7 @@ grow_vertical = 2
 script = ExtResource("3_j6adp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=833130238]
-stream = ExtResource("5_y5wjj")
+stream = ExtResource("4_hu5kt")
 autoplay = true
 bus = &"Music"
 parameters/looping = true

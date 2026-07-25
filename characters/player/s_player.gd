@@ -14,6 +14,8 @@ var init_location : Vector2
 func _ready() -> void:
 	GameManager.player = self
 	character.player_controller = player_controller
+	hud.reparent(GameManager.ui_parent)
+
 
 
 func start_game() -> void :
