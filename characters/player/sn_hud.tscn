@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://ecuop8ej6wlk"]
 
+[ext_resource type="Script" uid="uid://npjs2hkhvpgv" path="res://scripts/debug/fps_check/s_fps_lable.gd" id="1_5j7y8"]
+[ext_resource type="Script" uid="uid://ilw6fuagcuh6" path="res://characters/player/s_hud.gd" id="1_cqbmr"]
+
 [node name="SnHud" type="Control" unique_id=563239734]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cqbmr")
+
+[node name="Label" type="Label" parent="." unique_id=1072834324]
+layout_mode = 0
+offset_right = 249.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("1_5j7y8")

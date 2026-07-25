@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://c5hpxhivsi0pd" path="res://levels/general/s_level_parent.gd" id="2_j6adp"]
 [ext_resource type="Script" uid="uid://cqd05k8d0tqvq" path="res://levels/general/s_ui_parent.gd" id="3_j6adp"]
 [ext_resource type="AudioStream" uid="uid://dh2oj0d22kwc0" path="res://assets/audio/music/Calm1 Experiment.mp3" id="5_y5wjj"]
-[ext_resource type="Script" uid="uid://npjs2hkhvpgv" path="res://scripts/debug/fps_check/s_fps_lable.gd" id="6_774mb"]
 
 [node name="SnRoot" type="Node" unique_id=263513069 node_paths=PackedStringArray("level_parent", "ui_parent")]
 script = ExtResource("1_fr445")
@@ -22,13 +21,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_j6adp")
-
-[node name="Label" type="Label" parent="UiParent" unique_id=40198534]
-layout_mode = 0
-offset_right = 249.0
-offset_bottom = 75.0
-theme_override_font_sizes/font_size = 30
-script = ExtResource("6_774mb")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=833130238]
 stream = ExtResource("5_y5wjj")

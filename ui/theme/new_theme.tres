@@ -1,3 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://b1f47hatyojlj"]
 
+[ext_resource type="FontFile" uid="uid://84pb7iwjy86d" path="res://ui/theme/font/PublicPixel.ttf" id="1_7hrbo"]
+
 [resource]
+Button/fonts/font = ExtResource("1_7hrbo")
+Label/font_sizes/font_size = 12
+Label/fonts/font = ExtResource("1_7hrbo")
+TabContainer/fonts/font = ExtResource("1_7hrbo")

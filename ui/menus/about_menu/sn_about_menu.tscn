@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4ffuf0ldkc57"]
 
 [ext_resource type="Script" uid="uid://pe1rn6xcp1nk" path="res://ui/menus/about_menu/s_about_menu.gd" id="1_4ixbe"]
+[ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="2_l36u5"]
 
 [node name="SnAboutMenu" type="Control" unique_id=360967644]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_l36u5")
 script = ExtResource("1_4ixbe")
 
 [node name="Label" type="Label" parent="." unique_id=663867817]
@@ -24,13 +26,19 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Developed By:
-derpyfrog
-chicken
-edge
-zuse
-byfex
-z... i can't remember"
+theme = ExtResource("2_l36u5")
+text = "Programming:
+DerpyNinjaFrog
+armyofchickens
+капуста
+EdgeLordO7
+
+Art :
+DKZeus
+
+Music:
+ЯСРУЛЕТОМНАБАЛКОНЕ
+"
 horizontal_alignment = 1
 
 [node name="Back" type="Button" parent="." unique_id=1039533294]
@@ -43,6 +51,7 @@ offset_top = -38.0
 offset_right = 93.0
 offset_bottom = -19.0
 grow_vertical = 0
+theme = ExtResource("2_l36u5")
 text = "Back"
 
 [connection signal="button_down" from="Back" to="." method="_on_back_button_down"]
