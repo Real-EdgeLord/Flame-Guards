@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://npjs2hkhvpgv" path="res://scripts/debug/fps_check/s_fps_lable.gd" id="1_5j7y8"]
 [ext_resource type="Script" uid="uid://ilw6fuagcuh6" path="res://characters/player/s_hud.gd" id="1_cqbmr"]
+[ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="3_7dha5"]
 
 [node name="SnHud" type="Control" unique_id=563239734]
 layout_mode = 3
@@ -10,11 +11,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_7dha5")
 script = ExtResource("1_cqbmr")
 
 [node name="Label" type="Label" parent="." unique_id=1072834324]
 layout_mode = 0
 offset_right = 249.0
 offset_bottom = 75.0
+theme = ExtResource("3_7dha5")
 theme_override_font_sizes/font_size = 30
 script = ExtResource("1_5j7y8")
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=1236772311]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -135.0
+offset_bottom = 18.0
+grow_horizontal = 0
+theme = ExtResource("3_7dha5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer" unique_id=274951674]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_7dha5")
+
+[node name="Label2" type="Label" parent="BoxContainer/HBoxContainer" unique_id=863770890]
+layout_mode = 2
+theme = ExtResource("3_7dha5")
+text = "Score:"
+horizontal_alignment = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="BoxContainer/HBoxContainer" unique_id=74197936]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_7dha5")
+
+[node name="Label3" type="Label" parent="BoxContainer/HBoxContainer/BoxContainer" unique_id=96356533]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_7dha5")
+text = "0"
