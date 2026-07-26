@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://pe1rn6xcp1nk" path="res://ui/menus/about_menu/s_about_menu.gd" id="1_4ixbe"]
 [ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="2_l36u5"]
+[ext_resource type="Texture2D" uid="uid://bwv2c2frqxgb5" path="res://assets/2d/background/Portal.png" id="3_uv8nb"]
 
 [node name="SnAboutMenu" type="Control" unique_id=360967644]
 layout_mode = 3
@@ -12,6 +13,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_l36u5")
 script = ExtResource("1_4ixbe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1521779292]
+position = Vector2(318.52124, 177.49841)
+scale = Vector2(0.41793132, 0.41793123)
+texture = ExtResource("3_uv8nb")
 
 [node name="Label" type="Label" parent="." unique_id=663867817]
 layout_mode = 1

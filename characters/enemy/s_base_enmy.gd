@@ -9,12 +9,13 @@ var movement_delta: float
 
 @export var health : float = 10
 @export var damge : float = 5
+@export var score : int = 10
 var is_dead : bool = false
 
 signal destory_animation
 signal damage_animation
 
-signal destory_animation_complete
+#signal destory_animation_complete
 
 
 func _ready() -> void:
@@ -53,8 +54,8 @@ func check_collsion() -> void :
 		var collsion : KinematicCollision2D = get_slide_collision(i)
 		var colider : Node = collsion.get_collider()
 		var colider_parent : Node = colider.owner
-		if colider_parent is Player : 
-			print("collided with palyer")
+		#if colider_parent is Player : 
+			#print("collided with palyer")
 		if colider_parent is Chair :
 			var chair : Chair = colider_parent
 			damge_chair(chair)
@@ -70,7 +71,7 @@ func take_damage(_damge : float) -> void:
 	if health <= 0 and not is_dead:
 		is_dead = true
 		destory_animation.emit()
-		await destory_animation_complete
+		#await destory_animation_complete
 		destory()
 	else :
 		damage_animation.emit()

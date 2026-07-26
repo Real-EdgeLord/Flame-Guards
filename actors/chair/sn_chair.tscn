@@ -6,9 +6,47 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_gwtsm"]
 radius = 15.0
 
-[node name="SnChair" type="Node2D" unique_id=1243563484 node_paths=PackedStringArray("sprit", "static_body_2d", "collision_shape_2d", "audio_streem_player_2d") groups=["chair"]]
+[sub_resource type="Animation" id="Animation_widjf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mc1tl"]
+resource_name = "new_animation"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprit:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.103743516, 0.10374353, 0.103743516, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3flwl"]
+_data = {
+&"RESET": SubResource("Animation_widjf"),
+&"new_animation": SubResource("Animation_mc1tl")
+}
+
+[node name="SnChair" type="Node2D" unique_id=1243563484 node_paths=PackedStringArray("animation_player", "sprit", "static_body_2d", "collision_shape_2d", "audio_streem_player_2d") groups=["chair"]]
 texture_filter = 1
 script = ExtResource("1_otqso")
+animation_player = NodePath("AnimationPlayer")
 sprit = NodePath("sprit")
 static_body_2d = NodePath("StaticBody2D")
 collision_shape_2d = NodePath("StaticBody2D/CollisionShape2D")
@@ -24,3 +62,6 @@ shape = SubResource("CircleShape2D_gwtsm")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=318541587]
 bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=447289129]
+libraries/ = SubResource("AnimationLibrary_3flwl")

@@ -9,11 +9,12 @@ height = 14.0
 
 [node name="SnFastEnemy" type="CharacterBody2D" unique_id=1544623517 node_paths=PackedStringArray("navigation_agent", "sprite_2d")]
 script = ExtResource("1_1m8k2")
-movement_speed = 100.0
+movement_speed = 80.0
 navigation_agent = NodePath("NavigationAgent2D")
 sprite_2d = NodePath("Sprite2D")
 health = 5.0
 damge = 2.0
+score = 30
 metadata/_custom_type_script = "uid://cid0xqw1tkns2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=969989171]

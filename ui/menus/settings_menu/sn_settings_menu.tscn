@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="1_bbckr"]
 [ext_resource type="Script" uid="uid://cep2ajx6wimh3" path="res://ui/menus/settings_menu/s_settings_menu.gd" id="1_jqe6d"]
 [ext_resource type="Script" uid="uid://ccmwgtdren4q1" path="res://ui/menus/settings_menu/s_audio_setting.gd" id="2_jdpks"]
+[ext_resource type="Texture2D" uid="uid://bwv2c2frqxgb5" path="res://assets/2d/background/Portal.png" id="3_b202j"]
 
 [node name="SnSettingsMenu" type="Control" unique_id=875939106]
 layout_mode = 3
@@ -13,6 +14,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_bbckr")
 script = ExtResource("1_jqe6d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1970391826]
+position = Vector2(318.52124, 177.49841)
+scale = Vector2(0.41793132, 0.41793123)
+texture = ExtResource("3_b202j")
 
 [node name="Back" type="Button" parent="." unique_id=1073183971]
 layout_mode = 1

@@ -2,7 +2,7 @@ extends Node2D
 class_name Attack
 
 
-var damge : float 
+@export var damge : float 
 
 
 func destroy() -> void :

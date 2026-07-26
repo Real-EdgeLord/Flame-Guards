@@ -8,6 +8,7 @@ var damage_audio : Array[AudioStreamWAV] =[
 	load("uid://086tc0r7m3ug"),
 ]
 
+@export var animation_player: AnimationPlayer
 
 @export var health : float = 100
 var location : Vector2 
@@ -49,7 +50,10 @@ func take_damage(damge : float) -> void:
 func _on_damge() -> void :
 	audio_streem_player_2d.stream = damage_audio.get(randi_range(0,2))
 	audio_streem_player_2d.play()
-	await audio_streem_player_2d.finished
+	animation_player.play("new_animation")
+	await audio_streem_player_2d.finished 
+	if animation_player.is_playing() :
+		await animation_player.animation_finished
 	destory_animation_complete.emit()
 	pass 
 

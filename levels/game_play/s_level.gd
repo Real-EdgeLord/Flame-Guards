@@ -8,6 +8,7 @@ class_name Level
 @export var spawn_time_max : float = 1
 
 @export var spawn_rate : int = 2
+@export var player_spawner: Node2D
 
 var should_spawn : bool = false
 

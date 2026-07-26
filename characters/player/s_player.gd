@@ -9,17 +9,28 @@ class_name Player
 @export var hud : Hud
 
 var init_location : Vector2
+var score : int = 0
+
+
 
 
 func _ready() -> void:
 	GameManager.player = self
 	character.player_controller = player_controller
 	hud.reparent(GameManager.ui_parent)
+	var c1 : Error = character.add_to_score.connect(update_score) as Error
+	if c1 != OK :
+		print("error connecting score counter")
 
 
 
 func start_game() -> void :
 	character.position = init_location
+
+
+func update_score(added_score : int ) -> void :
+	score += added_score
+	hud.update_score_text(score)
 
 
 func end_game() -> void :
