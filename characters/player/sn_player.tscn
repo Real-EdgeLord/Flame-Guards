@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dq1j035551al4" path="res://characters/player/s_player_controller.gd" id="1_gaqhi"]
 [ext_resource type="Script" uid="uid://dcaruvomgd60q" path="res://characters/player/s_player.gd" id="1_syaqv"]
-[ext_resource type="Texture2D" uid="uid://de8jl2t26bhnm" path="res://characters/player/sprite_sheet/Player_Placeholder.png" id="2_syaqv"]
 [ext_resource type="PackedScene" uid="uid://ecuop8ej6wlk" path="res://characters/player/sn_hud.tscn" id="3_vikvi"]
 [ext_resource type="Script" uid="uid://cfdmiafx8tp83" path="res://characters/player/s_character_body_2d.gd" id="4_arfl0"]
+[ext_resource type="Texture2D" uid="uid://cgahyoyw0vd85" path="res://characters/player/sprite_sheet/fire.png" id="5_arfl0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h7pkv"]
-radius = 7.0
-height = 14.0
+radius = 14.0
+height = 28.0
 
 [sub_resource type="Animation" id="Animation_rbwfb"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("CharacterBody2D/CollisionShape2D/Sprite2D2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,55 +27,30 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_627fq"]
 resource_name = "idle_down"
-length = 0.6
 loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("CharacterBody2D/CollisionShape2D/Sprite2D2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(9.275973e-07, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.25, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 4, 5]
+"values": [0, 3, 2]
 }
 
 [sub_resource type="Animation" id="Animation_kh5uj"]
 resource_name = "idle_left"
 length = 0.6
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [1, 7, 6]
-}
 
 [sub_resource type="Animation" id="Animation_2t7h1"]
 resource_name = "idle_right"
 length = 0.6
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [1, 6, 7]
-}
 
 [sub_resource type="Animation" id="Animation_qqp4f"]
 resource_name = "idle_up"
@@ -85,14 +60,14 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("CharacterBody2D/CollisionShape2D/Sprite2D2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.25, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [2, 8, 9]
+"values": [0, 3, 2]
 }
 
 [sub_resource type="Animation" id="Animation_hihla"]
@@ -103,14 +78,14 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("CharacterBody2D/CollisionShape2D/Sprite2D2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.2, 0.45, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [10, 0, 11, 0]
+"values": [0, 3, 2]
 }
 
 [sub_resource type="Animation" id="Animation_vdvi6"]
@@ -121,14 +96,14 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("CharacterBody2D/CollisionShape2D/Sprite2D2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [12, 13]
+"values": [4, 5, 6, 7]
 }
 
 [sub_resource type="Animation" id="Animation_ukhvu"]
@@ -139,14 +114,14 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("CharacterBody2D/CollisionShape2D/Sprite2D2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.24999997, 0.49999997, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [12, 1, 13, 1]
+"values": [4, 5, 6, 7]
 }
 
 [sub_resource type="Animation" id="Animation_qa0bu"]
@@ -157,14 +132,14 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D/Sprite2D:frame")
+tracks/0/path = NodePath("CharacterBody2D/CollisionShape2D/Sprite2D2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.1, 0.35, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [15, 14, 16, 14]
+"values": [0, 3, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4wtv7"]
@@ -235,12 +210,13 @@ blend_point_3/pos = Vector2(-1, 0)
 blend_point_3/name = &"walk_left"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_h7pkv"]
+states/End/position = Vector2(846, 102)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_lkxvo")
-states/Idle/position = Vector2(493.9091, 62.636364)
-states/Start/position = Vector2(283.72726, 115.454544)
+states/Idle/position = Vector2(514.0909, 54.636364)
+states/Start/position = Vector2(282.72726, 116.454544)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_s1mde")
-states/Walk/position = Vector2(532.0909, 187.36363)
-graph_offset = Vector2(40, 10)
+states/Walk/position = Vector2(514.0909, 174.36363)
+graph_offset = Vector2(48, 44)
 
 [node name="Player" type="Node" unique_id=798974346 node_paths=PackedStringArray("character", "player_controller", "hud")]
 script = ExtResource("1_syaqv")
@@ -253,26 +229,23 @@ script = ExtResource("1_gaqhi")
 
 [node name="SnHud" parent="." unique_id=563239734 instance=ExtResource("3_vikvi")]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1520248584 node_paths=PackedStringArray("sprite", "animation_tree")]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1520248584 node_paths=PackedStringArray("sprite", "animation_tree", "audio_stream_player_2d")]
 script = ExtResource("4_arfl0")
-sprite = NodePath("Sprite2D")
+sprite = NodePath("CollisionShape2D/Sprite2D2")
 animation_tree = NodePath("AnimationTree")
+audio_stream_player_2d = NodePath("AudioStreamPlayer2D")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="CharacterBody2D" unique_id=48211471]
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=437164927]
-position = Vector2(0, 5)
-scale = Vector2(1.8333334, 1.8333334)
-texture = ExtResource("2_syaqv")
-centered = false
-offset = Vector2(-12, -18)
-hframes = 7
-vframes = 6
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1479515349]
-position = Vector2(0, 9)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_h7pkv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D" unique_id=1508257322]
+rotation = -1.5707964
+texture = ExtResource("5_arfl0")
+hframes = 4
+vframes = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=2084663687]
 

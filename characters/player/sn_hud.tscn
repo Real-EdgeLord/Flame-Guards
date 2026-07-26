@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ilw6fuagcuh6" path="res://characters/player/s_hud.gd" id="1_cqbmr"]
 [ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="3_7dha5"]
 
-[node name="SnHud" type="Control" unique_id=563239734]
+[node name="SnHud" type="Control" unique_id=563239734 node_paths=PackedStringArray("score_number", "virtual_joystick")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +13,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_7dha5")
 script = ExtResource("1_cqbmr")
+score_number = NodePath("BoxContainer/HBoxContainer/BoxContainer/score_number")
+virtual_joystick = NodePath("VirtualJoystick")
 
 [node name="Label" type="Label" parent="." unique_id=1072834324]
 layout_mode = 0
@@ -48,8 +50,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_7dha5")
 
-[node name="Label3" type="Label" parent="BoxContainer/HBoxContainer/BoxContainer" unique_id=96356533]
+[node name="score_number" type="Label" parent="BoxContainer/HBoxContainer/BoxContainer" unique_id=96356533]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_7dha5")
 text = "0"
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=1536603715]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -114.0
+offset_right = 202.0
+grow_vertical = 0
+joystick_mode = 1
+joystick_size = 58.0
+tip_size = 24.0
+action_left = &"move_left"
+action_right = &"move_right"
+action_up = &"move_up"
+action_down = &"move_down"

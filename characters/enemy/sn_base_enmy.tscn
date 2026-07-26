@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://cqffxtmh4t4o3"]
 
 [ext_resource type="Script" uid="uid://cid0xqw1tkns2" path="res://characters/enemy/s_base_enmy.gd" id="1_i1enu"]
-[ext_resource type="Texture2D" uid="uid://c5m6xvodhpb2y" path="res://characters/player/sprite_sheet/Down Walk/Player Down Walk Animation3.png" id="2_0u5my"]
+[ext_resource type="Texture2D" uid="uid://buqxqlftqb3g2" path="res://assets/2d/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Character_2.png" id="2_0u5my"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwtsm"]
+radius = 9.0
+height = 18.0
 
 [node name="SnBaseEnmy" type="CharacterBody2D" unique_id=1718618520 node_paths=PackedStringArray("navigation_agent", "sprite_2d") groups=["Enemy"]]
 script = ExtResource("1_i1enu")
 navigation_agent = NodePath("NavigationAgent2D")
 sprite_2d = NodePath("Sprite2D")
+score = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=183003972]
 shape = SubResource("CapsuleShape2D_gwtsm")
@@ -18,3 +21,5 @@ avoidance_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1805896393]
 texture = ExtResource("2_0u5my")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.15, 16.67)

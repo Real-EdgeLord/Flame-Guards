@@ -5,6 +5,7 @@ signal game_state_changed(old_state: GameState, new_state: GameState )
 
 var pause_screen_scene : PackedScene = preload("uid://bl6gpuwjdi6ib")
 var pause_screen : PauseScreen
+var show_joystick : bool = false
 
 enum GameState {
 	STARTING,
@@ -61,6 +62,8 @@ func _handle_state_change(new_state: GameState) -> void:
 
 
 func _game_starting() -> void:
+	if OS.has_feature("mobile"):
+		show_joystick = true 
 	var main_manu_scene: PackedScene = load("uid://d0yqan043d787")
 	var main_menu: MainMenu = main_manu_scene.instantiate()
 	ui_parent.add_child(main_menu)
@@ -90,26 +93,34 @@ func _game_paused() -> void:
 var chair : Chair
 var player : Player
 var current_level : Level
+var game_over_scene : PackedScene = load("uid://dqu1m1103qw7j")
 
 
 
 func _game_playing() -> void:
+	player.init_location = current_level.player_spawner.position
 	if player != null :
 		player.player_controller.input_active = true
-	var screen_center: Vector2 = get_viewport().get_visible_rect().size / 2.0
-	player.init_location = screen_center
+
+	
 	player.start_game()
 	current_level.start_game()
 
 
 
 
-var game_over_scene : PackedScene = load("uid://dqu1m1103qw7j")
+
 
 func game_over() -> void:
+	var score : int = player.score
+	player.end_game()
+	current_level.end_game()
 	player.player_controller.input_active = false
 	var _game_over : GameOver = game_over_scene.instantiate()
+	_game_over.score = score
+	_game_over.update_score()
 	ui_parent.add_child(_game_over)
+	
 
 
 func clear_objects() -> void :
