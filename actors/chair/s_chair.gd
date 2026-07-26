@@ -2,24 +2,37 @@ extends Node2D
 class_name Chair
 
 
-@export var back: Sprite2D
-@export var seat: Sprite2D
-@export var legs: Sprite2D
-@export var color: Color
+var health : float = 1000
+var location : Vector2 
 
-func set_back(back_piece : ChairPiece) -> void :
+@export var sprit: Sprite2D
+@export var static_body_2d: StaticBody2D
+@export var collision_shape_2d: CollisionShape2D
+
+
+signal destory_animation
+signal damage_animation
+
+signal destory_animation_complete
+
+func _ready() -> void:
+	GameManager.chair = self
 	
-	pass
+
+func _physics_process(_delta: float) -> void:
+	location = self.position
 
 
-func set_seat(seat_piece : ChairPiece) -> void :
-	
-	pass
+func take_damage(damge : float) -> void:
+	health -= damge
+	if health <= 0 :
+		destory_animation.emit()
+		await destory_animation_complete
+		GameManager.game_over()
+		destory_chair()
+	else :
+		damage_animation.emit()
 
-
-func set_legs(leg_piece : ChairPiece) -> void :
-	
-	pass
 
 
 func destory_chair() -> void :
