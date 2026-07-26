@@ -5,15 +5,25 @@ class_name BaseEnemy
 @export var navigation_agent: NavigationAgent2D 
 var movement_delta: float
 
-func _ready() -> void:
-	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
-	set_movement_target(Vector2(0,1))
+@export var health : float = 10
 
-func set_movement_target(movement_target: Vector2):
-	movement_target = Vector2(400,200)
+signal destory_animation
+signal damage_animation
+
+signal destory_animation_complete
+
+
+func _ready() -> void:
+	var c1 : Error = navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed)) as Error
+	if c1 != OK :
+		print("error in enmey conncect")
+
+
+func set_movement_target(movement_target: Vector2) -> void :
 	navigation_agent.set_target_position(movement_target)
 
-func _physics_process(delta):
+func _physics_process(_delta : float) -> void:
+	set_movement_target(GameManager.chair.location)
 	# Do not query when the map has never synchronized and is empty.
 	if navigation_agent.is_navigation_finished():
 		return
@@ -22,7 +32,44 @@ func _physics_process(delta):
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
-	move_and_slide()
+	var c1 : bool =  move_and_slide() 
+	if c1 == true : 
+		check_collsion()
+
+
+
+func check_collsion() -> void :
+	for i : int in get_slide_collision_count() :
+		var collsion : KinematicCollision2D = get_slide_collision(i)
+		var colider : Node = collsion.get_collider()
+		var colider_parent : Node = colider.owner
+		if colider_parent is Player : 
+			print("collided with palyer")
+		if colider_parent is Chair :
+			print("collided with chair")
+		if colider_parent is Attack :
+			var attack : Attack = colider_parent
+			take_damage(attack.damge)
+			attack.destroy()
+			print("collided with fire")
+
+
+func take_damage(damge : float) -> void:
+	health -= damge
+	if health <= 0 :
+		destory_animation.emit()
+		await destory_animation_complete
+		destory()
+	else :
+		damage_animation.emit()
+
+
+
+
+func destory() -> void :
+	
+	pass
+
 
 func _on_velocity_computed(safe_velocity: Vector2) -> void:
 	global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)

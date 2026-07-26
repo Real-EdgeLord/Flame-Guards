@@ -79,7 +79,6 @@ func _game_loading() -> void:
 func _game_menu() -> void:
 	if player_controller != null :
 		player_controller.input_active = false
-
 	pass
 
 
@@ -90,7 +89,7 @@ func _game_paused() -> void:
 	ui_parent.add_child(pause_screen)
 
 
-
+var chair : Chair
 
 func _game_playing() -> void:
 	if player_controller != null :
@@ -98,6 +97,13 @@ func _game_playing() -> void:
 	var screen_center: Vector2 = get_viewport().get_visible_rect().size / 2.0
 	player.init_location = screen_center
 	player.start_game()
+
+
+func game_over() -> void:
+	
+	
+	
+	pass
 
 
 

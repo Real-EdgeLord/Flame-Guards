@@ -2,11 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://j4o6p5xeo8xh" path="res://assets/2d/throne_game/tileset.png" id="1_k1q68"]
 [ext_resource type="PackedScene" uid="uid://cqffxtmh4t4o3" path="res://characters/enemy/sn_base_enmy.tscn" id="2_aadsv"]
+[ext_resource type="PackedScene" uid="uid://df4cjcntrrtjj" path="res://actors/chair/sn_chair.tscn" id="3_5rts3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_0u5my"]
-vertices = PackedVector2Array(408, 228, 785.9531, 457.59375, -49.890625, 427.35938, 356, 228, 733, -91.14844, 408, 197.85938, -45.09375, -21.84375, 356, 197.85938, 394.14063, 184, 369.85938, 184)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 1, 0, 5), PackedInt32Array(3, 2, 6, 7), PackedInt32Array(4, 5, 8), PackedInt32Array(6, 4, 8, 9), PackedInt32Array(6, 9, 7)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-55, -31, -60, 437, 797, 468, 742, -102)])
+vertices = PackedVector2Array(748.6797, 420.07813, -49.976563, 426.90625, -49.007813, -88.03906, 732.3203, -91.953125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-59, -98, -60, 437, 759, 430, 742, -102)])
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gwtsm"]
 
@@ -429,10 +430,21 @@ tile_set = SubResource("TileSet_x1gv0")
 [node name="TileMapLayer2" type="TileMapLayer" parent="NavigationRegion2D" unique_id=701984380]
 texture_filter = 1
 position = Vector2(62, 10)
-tile_map_data = PackedByteArray("AAATAAsAAAARAAIAAAAUAAsAAAASAAIAAAATAAwAAAARAAMAAAAUAAwAAAASAAMAAAA=")
 tile_set = SubResource("TileSet_gwtsm")
 
 [node name="Node2D" type="Node2D" parent="NavigationRegion2D" unique_id=1035897205]
 
 [node name="SnBaseEnmy" parent="." unique_id=1718618520 instance=ExtResource("2_aadsv")]
 position = Vector2(85, 221)
+
+[node name="SnChair" parent="." unique_id=1243563484 instance=ExtResource("3_5rts3")]
+position = Vector2(318, 172)
+
+[node name="SnBaseEnmy2" parent="." unique_id=918609999 instance=ExtResource("2_aadsv")]
+position = Vector2(205, 160)
+
+[node name="SnBaseEnmy3" parent="." unique_id=672466788 instance=ExtResource("2_aadsv")]
+position = Vector2(518, 116)
+
+[node name="SnBaseEnmy4" parent="." unique_id=1737214198 instance=ExtResource("2_aadsv")]
+position = Vector2(523, 253)
