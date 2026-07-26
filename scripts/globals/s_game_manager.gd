@@ -126,9 +126,9 @@ func game_over() -> void:
 
 func clear_objects() -> void :
 	if chair != null :
-		chair.destory_chair()
+		chair.destroy_chair()
 	if player != null :
-		player.destory()
+		player.destroy()
 	for child : Node in level_parent.get_children() :
 		child.queue_free()
 	

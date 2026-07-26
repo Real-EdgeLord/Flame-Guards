@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name PlayerCharacter
 
 @export_group("Movement")
-@export var move_speed: float = 100.0
-@export var chair_damge: float = 5
+@export var move_speed: float = 115.0
+@export var chair_damage: float = 2
 @export var boost_peak : int = 300
 @export var boost_timer_seconds : float = 10
 @export var can_shoot_while_boost : bool = false
@@ -16,7 +16,6 @@ var can_shoot : bool = false
 @export var animation_tree: AnimationTree
 @export var audio_stream_player_2d: AudioStreamPlayer2D
 @export var area_2d: Area2D
-
 
 
 
@@ -91,7 +90,7 @@ func check_collsion() -> void :
 		var colider_parent : Node = colider.owner
 		if colider_parent is Chair :
 			var chair : Chair = colider_parent
-			damge_chair(chair)
+			damage_chair(chair)
 		if colider is BaseEnemy :
 			var _enemy : BaseEnemy = colider
 			collide_with_enemy(_enemy)
@@ -133,10 +132,8 @@ func lock_boost() -> void:
 
 
 
-func damge_chair(chair : Chair) -> void :
-	chair.take_damage(chair_damge)
-	
-	pass
+func damage_chair(chair : Chair) -> void :
+	chair.take_damage(chair_damage)
 
 
 func _update_animation(input_dir: Vector2) -> void:
@@ -159,7 +156,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	var colider_parent : Node = colider.owner
 	if colider_parent is Chair :
 		var chair : Chair = colider_parent
-		damge_chair(chair)
+		damage_chair(chair)
 	if colider is BaseEnemy :
 		var _enemy : BaseEnemy = colider
 		collide_with_enemy(_enemy)

@@ -9,7 +9,7 @@ class_name PlayerController
 @export var action_right: StringName = &"move_right"
 @export var action_up: StringName = &"move_up"
 @export var action_down: StringName = &"move_down"
-@export var action_menu: StringName = &"meun"
+@export var action_menu: StringName = &"menu"
 @export var action_attack: StringName = &"attack"
 @export var action_attack_left: StringName = &"attack_left"
 @export var action_attack_right: StringName= &"attack_right"
@@ -31,7 +31,7 @@ func _input(event: InputEvent) -> void:
 	_unhandled_input(event)
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if ! input_active :
+	if !input_active:
 		move_dir = Vector2.ZERO
 		attack_dir = Vector2.ZERO
 		attack = false

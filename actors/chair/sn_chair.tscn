@@ -11,7 +11,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprit:modulate")
+tracks/0/path = NodePath("Sprite:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +27,7 @@ length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprit:modulate")
+tracks/0/path = NodePath("Sprite:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -43,16 +43,16 @@ _data = {
 &"new_animation": SubResource("Animation_mc1tl")
 }
 
-[node name="SnChair" type="Node2D" unique_id=1243563484 node_paths=PackedStringArray("animation_player", "sprit", "static_body_2d", "collision_shape_2d", "audio_streem_player_2d") groups=["chair"]]
+[node name="SnChair" type="Node2D" unique_id=1243563484 node_paths=PackedStringArray("animation_player", "sprite", "static_body_2d", "collision_shape_2d", "audio_stream_player_2d") groups=["chair"]]
 texture_filter = 1
 script = ExtResource("1_otqso")
 animation_player = NodePath("AnimationPlayer")
-sprit = NodePath("sprit")
+sprite = NodePath("Sprite")
 static_body_2d = NodePath("StaticBody2D")
 collision_shape_2d = NodePath("StaticBody2D/CollisionShape2D")
-audio_streem_player_2d = NodePath("AudioStreamPlayer2D")
+audio_stream_player_2d = NodePath("AudioStreamPlayer2D")
 
-[node name="sprit" type="Sprite2D" parent="." unique_id=2109202343]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2109202343]
 texture = ExtResource("2_widjf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=70151816]

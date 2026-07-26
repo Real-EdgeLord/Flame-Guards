@@ -36,6 +36,6 @@ func update_score(added_score : int ) -> void :
 func end_game() -> void :
 	pass
 
-func destory() -> void :
+func destroy() -> void :
 	hud.queue_free()
 	self. queue_free()

@@ -47,7 +47,7 @@ Music:
 "
 horizontal_alignment = 1
 
-[node name="Back" type="Button" parent="." unique_id=1039533294]
+[node name="Back" type="Button" parent="." unique_id=1039533294 groups=["btnsfx"]]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

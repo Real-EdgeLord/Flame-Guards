@@ -20,7 +20,7 @@ position = Vector2(318.52124, 177.49841)
 scale = Vector2(0.41793132, 0.41793123)
 texture = ExtResource("3_b202j")
 
-[node name="Back" type="Button" parent="." unique_id=1073183971]
+[node name="Back" type="Button" parent="." unique_id=1073183971 groups=["btnsfx"]]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

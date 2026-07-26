@@ -28,28 +28,28 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_bn7cf")
 
-[node name="BTPlay" type="Button" parent="VBoxContainer" unique_id=696089903]
+[node name="BTPlay" type="Button" parent="VBoxContainer" unique_id=696089903 groups=["btnsfx"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_bn7cf")
 theme_override_font_sizes/font_size = 22
 text = "Play"
 
-[node name="BTSettings" type="Button" parent="VBoxContainer" unique_id=1199209231]
+[node name="BTSettings" type="Button" parent="VBoxContainer" unique_id=1199209231 groups=["btnsfx"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_bn7cf")
 theme_override_font_sizes/font_size = 22
 text = "Settings"
 
-[node name="BTMainMenu" type="Button" parent="VBoxContainer" unique_id=1862334805]
+[node name="BTMainMenu" type="Button" parent="VBoxContainer" unique_id=1862334805 groups=["btnsfx"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_bn7cf")
 theme_override_font_sizes/font_size = 22
 text = "Main Menu"
 
-[node name="BTQuit" type="Button" parent="VBoxContainer" unique_id=1553159762]
+[node name="BTQuit" type="Button" parent="VBoxContainer" unique_id=1553159762 groups=["btnsfx"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_bn7cf")

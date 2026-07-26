@@ -8,14 +8,14 @@ var movement_delta: float
 
 
 @export var health : float = 10
-@export var damge : float = 5
+@export var damage : float = 5
 @export var score : int = 10
 var is_dead : bool = false
 
-signal destory_animation
+signal destroy_animation
 signal damage_animation
 
-#signal destory_animation_complete
+#signal destroy_animation_complete
 
 
 func _ready() -> void:
@@ -58,35 +58,35 @@ func check_collsion() -> void :
 			#print("collided with palyer")
 		if colider_parent is Chair :
 			var chair : Chair = colider_parent
-			damge_chair(chair)
+			damage_chair(chair)
 		if colider_parent is Attack :
 			var attack : Attack = colider_parent
-			take_damage(attack.damge)
+			take_damage(attack.damage)
 			attack.destroy()
 			print("collided with fire")
 
 
-func take_damage(_damge : float) -> void:
-	health -= _damge
+func take_damage(_damage : float) -> void:
+	health -= _damage
 	if health <= 0 and not is_dead:
 		is_dead = true
-		destory_animation.emit()
-		#await destory_animation_complete
-		destory()
+		destroy_animation.emit()
+		#await destroy_animation_complete
+		destroy()
 	else :
 		damage_animation.emit()
 
-func damge_chair(chair : Chair) -> void :
+func damage_chair(chair : Chair) -> void :
 	if not is_dead :
 		is_dead = true
-		chair.take_damage(damge)
-		destory_animation.emit()
-		#await destory_animation_complete
-		destory()
+		chair.take_damage(damage)
+		destroy_animation.emit()
+		#await destroy_animation_complete
+		destroy()
 		pass
 
 
-func destory() -> void :
+func destroy() -> void :
 	self.queue_free()
 	
 	pass
