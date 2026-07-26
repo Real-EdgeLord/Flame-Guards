@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ilw6fuagcuh6" path="res://characters/player/s_hud.gd" id="1_cqbmr"]
 [ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="3_7dha5"]
 
-[node name="SnHud" type="Control" unique_id=563239734 node_paths=PackedStringArray("score_number", "virtual_joystick")]
+[node name="SnHud" type="Control" unique_id=563239734 node_paths=PackedStringArray("score_number", "virtual_joystick", "pause_touch")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +15,7 @@ theme = ExtResource("3_7dha5")
 script = ExtResource("1_cqbmr")
 score_number = NodePath("BoxContainer/HBoxContainer/BoxContainer/score_number")
 virtual_joystick = NodePath("VirtualJoystick")
+pause_touch = NodePath("pause_touch")
 
 [node name="Label" type="Label" parent="." unique_id=1072834324]
 visible = false
@@ -74,3 +75,15 @@ action_left = &"move_left"
 action_right = &"move_right"
 action_up = &"move_up"
 action_down = &"move_down"
+
+[node name="pause_touch" type="Button" parent="." unique_id=1566976407]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 102.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 13
+text = "Pause"
+
+[connection signal="button_down" from="pause_touch" to="." method="_on_pause_touch_button_down"]
+[connection signal="button_up" from="pause_touch" to="." method="_on_pause_touch_button_up"]
