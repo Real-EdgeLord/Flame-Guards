@@ -16,7 +16,7 @@ var move_dir : Vector2
 
 
 func _ready() -> void:
-	GameManager.player_controller = self
+	pass
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if ! input_active :

@@ -6,12 +6,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_gwtsm"]
 radius = 15.0
 
-[node name="SnChair" type="Node2D" unique_id=1243563484 node_paths=PackedStringArray("sprit", "static_body_2d", "collision_shape_2d") groups=["chair"]]
+[node name="SnChair" type="Node2D" unique_id=1243563484 node_paths=PackedStringArray("sprit", "static_body_2d", "collision_shape_2d", "audio_streem_player_2d") groups=["chair"]]
 texture_filter = 1
 script = ExtResource("1_otqso")
 sprit = NodePath("sprit")
 static_body_2d = NodePath("StaticBody2D")
 collision_shape_2d = NodePath("StaticBody2D/CollisionShape2D")
+audio_streem_player_2d = NodePath("AudioStreamPlayer2D")
 
 [node name="sprit" type="Sprite2D" parent="." unique_id=2109202343]
 texture = ExtResource("2_widjf")
@@ -20,3 +21,6 @@ texture = ExtResource("2_widjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1071299052]
 shape = SubResource("CircleShape2D_gwtsm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=318541587]
+bus = &"SFX"
