@@ -18,6 +18,9 @@ var move_dir : Vector2
 func _ready() -> void:
 	pass
 
+func _input(event: InputEvent) -> void:
+	_unhandled_input(event)
+
 func _unhandled_input(_event: InputEvent) -> void:
 	if ! input_active :
 		move_dir = Vector2.ZERO

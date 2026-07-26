@@ -64,6 +64,7 @@ func _handle_state_change(new_state: GameState) -> void:
 func _game_starting() -> void:
 	if OS.has_feature("mobile"):
 		show_joystick = true 
+
 	var main_manu_scene: PackedScene = load("uid://d0yqan043d787")
 	var main_menu: MainMenu = main_manu_scene.instantiate()
 	ui_parent.add_child(main_menu)
