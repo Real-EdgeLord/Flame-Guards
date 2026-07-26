@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ilw6fuagcuh6" path="res://characters/player/s_hud.gd" id="1_cqbmr"]
 [ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="3_7dha5"]
 
-[node name="SnHud" type="Control" unique_id=563239734 node_paths=PackedStringArray("score_number", "virtual_joystick", "pause_touch")]
+[node name="SnHud" type="Control" unique_id=563239734 node_paths=PackedStringArray("score_number", "virtual_joystick", "pause_touch", "attack_joy_stick")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +16,7 @@ script = ExtResource("1_cqbmr")
 score_number = NodePath("BoxContainer/HBoxContainer/BoxContainer/score_number")
 virtual_joystick = NodePath("VirtualJoystick")
 pause_touch = NodePath("pause_touch")
+attack_joy_stick = NodePath("attack_joy_stick")
 
 [node name="Label" type="Label" parent="." unique_id=1072834324]
 visible = false
@@ -84,6 +85,25 @@ offset_right = 102.0
 offset_bottom = 39.0
 theme_override_font_sizes/font_size = 13
 text = "Pause"
+
+[node name="attack_joy_stick" type="VirtualJoystick" parent="." unique_id=1252248217]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -178.0
+offset_top = -103.0
+grow_horizontal = 0
+grow_vertical = 0
+joystick_mode = 1
+joystick_size = 58.0
+tip_size = 24.0
+action_left = &"attack_left"
+action_right = &"attack_right"
+action_up = &"attack_up"
+action_down = &"attack_down"
 
 [connection signal="button_down" from="pause_touch" to="." method="_on_pause_touch_button_down"]
 [connection signal="button_up" from="pause_touch" to="." method="_on_pause_touch_button_up"]
