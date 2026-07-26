@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cjyclj6q4ouvc"]
+
+[ext_resource type="Script" uid="uid://cid0xqw1tkns2" path="res://characters/enemy/s_base_enmy.gd" id="1_1m8k2"]
+[ext_resource type="Texture2D" uid="uid://buqxqlftqb3g2" path="res://assets/2d/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Character_2.png" id="2_x25tb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akia0"]
+radius = 7.0
+height = 14.0
+
+[node name="SnFastEnemy" type="CharacterBody2D" unique_id=1544623517 node_paths=PackedStringArray("navigation_agent", "sprite_2d")]
+script = ExtResource("1_1m8k2")
+movement_speed = 100.0
+navigation_agent = NodePath("NavigationAgent2D")
+sprite_2d = NodePath("Sprite2D")
+health = 5.0
+damge = 2.0
+metadata/_custom_type_script = "uid://cid0xqw1tkns2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=969989171]
+shape = SubResource("CapsuleShape2D_akia0")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1219384380]
+avoidance_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1962331232]
+texture = ExtResource("2_x25tb")
+region_enabled = true
+region_rect = Rect2(17.47, 17.16, 13.11, 13.6)

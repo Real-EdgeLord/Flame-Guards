@@ -15,9 +15,10 @@ func _ready() -> void:
 func _on_bt_start_game_pressed() -> void:
 	GameManager.change_state(GameManager.GameState.LOADING)
 	SceneManager.show_loading_screen()
-	var work_shop_scene : PackedScene = await SceneManager.change_scene("uid://b8jo106lk6luu")
-	var work_shop: Node = work_shop_scene.instantiate()
-	GameManager.level_parent.add_child(work_shop)
+	var level_one_scene : PackedScene = await SceneManager.change_scene("uid://b8jo106lk6luu")
+	var level_one: Node = level_one_scene.instantiate()
+	GameManager.current_level = level_one
+	GameManager.level_parent.add_child(level_one)
 	var player_scene : PackedScene = await SceneManager.change_scene("uid://m7rn1g4g3kfa")
 	var player: Player = player_scene.instantiate()
 	GameManager.level_parent.add_child(player)

@@ -21,9 +21,7 @@ var level_parent: LevelParent
 var current_state: GameState
 var previous_state: GameState
 
-var character_input : bool = false
-var player : Player
-var player_controller : PlayerController
+
 
 
 func _ready() -> void:
@@ -71,40 +69,57 @@ func _game_starting() -> void:
 
 
 func _game_loading() -> void:
-	if player_controller != null :
-		player_controller.input_active = false
+	if player!= null :
+		player.player_controller.input_active = false
 	pass
 
 
 func _game_menu() -> void:
-	if player_controller != null :
-		player_controller.input_active = false
+	if player != null :
+		player.player_controller.input_active = false
 	pass
 
 
 func _game_paused() -> void:
-	if player_controller != null :
-		player_controller.input_active = false
+	if player != null :
+		player.player_controller.input_active = false
 	pause_screen = pause_screen_scene.instantiate()
 	ui_parent.add_child(pause_screen)
 
 
 var chair : Chair
+var player : Player
+var current_level : Level
+
+
 
 func _game_playing() -> void:
-	if player_controller != null :
-		player_controller.input_active = true
+	if player != null :
+		player.player_controller.input_active = true
 	var screen_center: Vector2 = get_viewport().get_visible_rect().size / 2.0
 	player.init_location = screen_center
 	player.start_game()
+	current_level.start_game()
 
+
+
+
+var game_over_scene : PackedScene = load("uid://dqu1m1103qw7j")
 
 func game_over() -> void:
-	
-	
-	
-	pass
+	player.player_controller.input_active = false
+	var _game_over : GameOver = game_over_scene.instantiate()
+	ui_parent.add_child(_game_over)
 
+
+func clear_objects() -> void :
+	if chair != null :
+		chair.destory_chair()
+	if player != null :
+		player.destory()
+	for child : Node in level_parent.get_children() :
+		child.queue_free()
+	
 
 
 func _game_quiting()-> void:

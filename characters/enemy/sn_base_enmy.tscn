@@ -5,9 +5,10 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwtsm"]
 
-[node name="SnBaseEnmy" type="CharacterBody2D" unique_id=1718618520 node_paths=PackedStringArray("navigation_agent") groups=["Enemy"]]
+[node name="SnBaseEnmy" type="CharacterBody2D" unique_id=1718618520 node_paths=PackedStringArray("navigation_agent", "sprite_2d") groups=["Enemy"]]
 script = ExtResource("1_i1enu")
 navigation_agent = NodePath("NavigationAgent2D")
+sprite_2d = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=183003972]
 shape = SubResource("CapsuleShape2D_gwtsm")

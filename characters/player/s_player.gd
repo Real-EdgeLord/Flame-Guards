@@ -24,3 +24,7 @@ func start_game() -> void :
 
 func end_game() -> void :
 	pass
+
+func destory() -> void :
+	hud.queue_free()
+	self. queue_free()

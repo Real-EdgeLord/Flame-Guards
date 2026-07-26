@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dqu1m1103qw7j"]
 
 [ext_resource type="Script" uid="uid://bcsjh1ir51pg2" path="res://ui/screens/game_over_screen/s_game_over.gd" id="1_ufb8y"]
+[ext_resource type="Theme" uid="uid://b1f47hatyojlj" path="res://ui/theme/new_theme.tres" id="2_bn4um"]
 
 [node name="SnGameOver" type="Control" unique_id=328957768]
 layout_mode = 3
@@ -10,3 +11,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ufb8y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1557573151]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -29.0
+offset_right = 48.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1614413289]
+layout_mode = 2
+theme = ExtResource("2_bn4um")
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=2118895106]
+custom_minimum_size = Vector2(0, 47.145)
+layout_mode = 2
+theme = ExtResource("2_bn4um")
+text = "Main Menu"
+
+[connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]
