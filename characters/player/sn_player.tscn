@@ -231,6 +231,7 @@ script = ExtResource("1_gaqhi")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1520248584 node_paths=PackedStringArray("sprite", "animation_tree", "audio_stream_player_2d")]
 script = ExtResource("4_arfl0")
+boost_peak = 200
 sprite = NodePath("CollisionShape2D/Sprite2D2")
 animation_tree = NodePath("AnimationTree")
 audio_stream_player_2d = NodePath("AudioStreamPlayer2D")

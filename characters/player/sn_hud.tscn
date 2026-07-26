@@ -17,6 +17,7 @@ score_number = NodePath("BoxContainer/HBoxContainer/BoxContainer/score_number")
 virtual_joystick = NodePath("VirtualJoystick")
 
 [node name="Label" type="Label" parent="." unique_id=1072834324]
+visible = false
 layout_mode = 0
 offset_right = 249.0
 offset_bottom = 75.0
@@ -29,8 +30,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -135.0
-offset_bottom = 18.0
+offset_left = -134.0
+offset_top = 16.0
+offset_right = 1.0
+offset_bottom = 34.0
 grow_horizontal = 0
 theme = ExtResource("3_7dha5")
 
