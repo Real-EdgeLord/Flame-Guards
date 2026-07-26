@@ -6,13 +6,17 @@ class_name PlayerCharacter
 @export var chair_damge: float = 5
 @export var boost_peak : int = 300
 @export var boost_timer_seconds : float = 10
+@export var can_shoot_while_boost : bool = false
 var current_boost : int
 var is_boost_locked : bool = true
+var can_shoot : bool = false
 
 @export_group("Node References")
 @export var sprite: Sprite2D
 @export var animation_tree: AnimationTree
 @export var audio_stream_player_2d: AudioStreamPlayer2D
+@export var area_2d: Area2D
+
 
 
 
@@ -45,6 +49,7 @@ func _ready() -> void:
 	var playback_variant: Variant = animation_tree.get(&"parameters/playback")
 	if playback_variant is AnimationNodeStateMachinePlayback:
 		_playback = playback_variant
+	area_2d.visible = false
 
 
 
@@ -56,7 +61,25 @@ func _physics_process(_delta: float) -> void:
 	var _collided: bool = move_and_slide()
 	if _collided == true:
 		check_collsion()
+
+	if player_controller.attack :
+		if can_shoot :
+			var attack_direction : Vector2 = player_controller.attack_dir
+			if attack_direction.is_zero_approx() :
+				return
+			var angle : float = attack_direction.angle() 
+			area_2d.rotation = angle
+			area_2d.visible = true
+			area_2d.monitoring = true
+		else :
+			area_2d.visible = false
+			area_2d.monitoring = false
+	else :
+		area_2d.visible = false
+		area_2d.monitoring = false
+	
 	_update_animation(move_dir)
+
 
 
 
@@ -87,6 +110,8 @@ func collide_with_enemy(enemy : BaseEnemy) -> void :
 				unlock_boost()
 
 func unlock_boost() -> void :
+
+	can_shoot = true
 	is_boost_locked = false
 	var timer : Timer = Timer.new()
 	add_child(timer)
@@ -100,6 +125,7 @@ func unlock_boost() -> void :
 	lock_boost()
 
 func lock_boost() -> void:
+	can_shoot = false
 	move_speed /= 2
 	sprite.self_modulate = Color(1,1,1,1)
 	is_boost_locked = true
@@ -125,3 +151,15 @@ func _update_animation(input_dir: Vector2) -> void:
 		sprite.flip_h = input_dir.x > 0.0
 	animation_tree.set(walk_blend_param, input_dir)
 	_playback.travel(walk_state)
+
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	var colider : Node = body
+	var colider_parent : Node = colider.owner
+	if colider_parent is Chair :
+		var chair : Chair = colider_parent
+		damge_chair(chair)
+	if colider is BaseEnemy :
+		var _enemy : BaseEnemy = colider
+		collide_with_enemy(_enemy)
